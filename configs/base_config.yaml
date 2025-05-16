@@ -1,0 +1,31 @@
+# Base Configuration for AI Agent Framework
+agent:
+  default_llm: "mistral-7b"
+  fallback_llm: "llama-2-13b-chat"
+  temperature: 0.7
+  max_tokens: 2048
+
+memory:
+  episodic_buffer_size: 5
+  short_term_capacity: 10000
+  long_term_persistence: true
+  retrieval_top_k: 3
+
+tools:
+  web_search_enabled: true
+  max_search_results: 5
+  tool_timeout: 30.0
+
+retriever:
+  mode: "hybrid"  # colbert|dense|hybrid
+  rerank_enabled: true
+  chunk_size: 512
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+performance:
+  batch_size: 8
+  max_concurrent: 4
+  enable_kv_cache: true
