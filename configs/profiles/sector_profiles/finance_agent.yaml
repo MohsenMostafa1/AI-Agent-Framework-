@@ -1,0 +1,32 @@
+# Financial Sector Agent Profile
+finance:
+  market_data:
+    realtime_sources:
+      - "bloomberg"
+      - "reuters"
+      - "sec_edgar"
+    refresh_interval: 60  # seconds
+
+  analysis:
+    default_models:
+      - "DCF"
+      - "Comparables"
+      - "LBO"
+    risk_adjustment: "CAPM"
+
+  compliance:
+    regulatory_bodies:
+      - "SEC"
+      - "FINRA"
+      - "FCA"
+    insider_trading_scan: true
+
+  reporting:
+    gaap_compliance: true
+    ifrs_support: true
+
+tools:
+  enabled:
+    - "financial_statement_analyzer"
+    - "portfolio_optimizer"
+    - "earnings_call_analyzer"
