@@ -1,0 +1,94 @@
+# Coder Agent Profile - Specialized for Software Development
+programming:
+  languages:
+    primary: 
+      - "python"
+      - "javascript"
+      - "typescript"
+    secondary:
+      - "java"
+      - "c#"
+      - "go"
+      - "rust"
+  
+  frameworks:
+    auto_detect: true
+    preferred:
+      web: ["react", "vue", "django", "flask"]
+      ml: ["pytorch", "tensorflow", "langchain"]
+  
+  code_quality:
+    linters:
+      enabled: true
+      strictness: "high"
+    auto_format: true
+    style_guide: "pep8"  # pep8|google|airbnb etc.
+
+development:
+  debugging:
+    stack_trace_analysis: true
+    suggested_fixes: 3  # Number of solutions to propose
+    runtime_profiling: true
+  
+  testing:
+    auto_generate_tests: true
+    coverage_threshold: 80  # %
+    framework_preference: "pytest"  # jest/mocha etc.
+
+  documentation:
+    auto_comments: true
+    docstring_format: "google"  # numpy|google|rst
+    diagram_generation: true  # UML/flowcharts
+
+ai_coding:
+  code_generation:
+    context_window: 2048  # tokens
+    accept_multiple_solutions: true
+    security_scan: true
+  
+  code_review:
+    vulnerability_check: true
+    performance_antipatterns: true
+    style_violations: true
+
+tools:
+  enabled:
+    - "code_interpreter"
+    - "terminal_emulator"
+    - "git_integration"
+    - "jupyter_kernel"
+    - "container_orchestrator"  # Docker/K8s
+  
+  integrations:
+    vscode: true
+    jetbrains: false
+    jupyter: true
+
+security:
+  secrets_detection:
+    enabled: true
+    patterns: ["api_key", "password", "token"]
+  dependency_scanning:
+    cve_check: true
+    license_compliance: true
+
+repository:
+  git_operations:
+    auto_commit_message: true
+    branch_naming_convention: "feature/{id}-{desc}"
+  pr_workflow:
+    auto_description: true
+    review_checklist: true
+
+performance:
+  code_optimization:
+    suggest_optimizations: true
+    benchmark_comparison: true
+  resource_usage:
+    memory_profiling: true
+    cpu_heatmap: false  # Requires advanced monitoring
+
+compatibility:
+  python_versions: ["3.8", "3.9", "3.10", "3.11"]
+  node_versions: ["16.x", "18.x", "20.x"]
+  docker_base_images: ["python:3.9-slim", "node:18-alpine"]
