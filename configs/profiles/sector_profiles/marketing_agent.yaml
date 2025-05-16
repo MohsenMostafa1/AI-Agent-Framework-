@@ -1,0 +1,33 @@
+# Marketing Sector Agent Profile
+marketing:
+  campaign:
+    default_channels:
+      - "social"
+      - "email"
+      - "programmatic"
+    kpi_weights:
+      impressions: 0.2
+      ctr: 0.3
+      conversions: 0.5
+
+  content:
+    brand_voice: "professional"  # options: casual, authoritative, etc.
+    seo_optimization: true
+    readability_target: "grade8"  # school grade level
+
+  audience:
+    segmentation_defaults:
+      - "demographic"
+      - "behavioral"
+      - "psychographic"
+    lookalike_modeling: true
+
+  analytics:
+    attribution_model: "data_driven"  # first/last/linear
+    incrementality_testing: true
+
+tools:
+  enabled:
+    - "ad_copy_generator"
+    - "sentiment_analyzer"
+    - "roi_calculator"
