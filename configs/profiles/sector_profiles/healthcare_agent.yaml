@@ -1,0 +1,30 @@
+# Healthcare Sector Agent Profile
+healthcare:
+  rag:
+    medical_sources:
+      priority:
+        - "pubmed"
+        - "clinical_guidelines"
+        - "fda_database"
+      reliability_threshold: 0.85
+
+  compliance:
+    hipaa_strict_mode: true
+    phi_detection: true
+    icd_coding: "ICD-11"  # or ICD-10
+
+  clinical:
+    diagnosis_confirmation:
+      min_sources: 3
+    treatment_recommendations:
+      require_approval: true
+
+  safety:
+    drug_interaction_check: true
+    contraindication_scan: true
+
+tools:
+  enabled:
+    - "clinical_decision_support"
+    - "medical_terminology_expander"
+    - "patient_simulator"
