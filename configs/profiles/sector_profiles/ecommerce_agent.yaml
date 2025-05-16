@@ -1,0 +1,27 @@
+# E-Commerce Sector Agent Profile
+ecommerce:
+  personalization:
+    recommendation_models:
+      - "collaborative_filtering"
+      - "content_based"
+    realtime_pricing: true
+
+  inventory:
+    demand_forecasting_window: 30  # days
+    stockout_threshold: 0.95
+
+  conversion:
+    a/b_testing_defaults:
+      duration: 7  # days
+      significance: 0.05
+
+  marketplace:
+    competitor_monitoring:
+      interval: 24  # hours
+    review_sentiment_analysis: true
+
+tools:
+  enabled:
+    - "product_description_generator"
+    - "dynamic_pricing_engine"
+    - "cart_abandonment_analyzer"
