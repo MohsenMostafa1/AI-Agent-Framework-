@@ -1,0 +1,34 @@
+# Legal Sector Agent Profile
+legal:
+  rag:
+    specialized_collections:
+      - "case_law"
+      - "statutes"
+      - "contract_templates"
+    retrieval_weighting:
+      precedent: 0.6
+      statute: 0.3
+      secondary: 0.1
+
+  compliance:
+    jurisdiction: "global"  # can be overridden per-case
+    required_checks:
+      - "sanctions"
+      - "conflict_check"
+      - "data_privacy"
+
+  drafting:
+    default_tone: "formal"
+    clause_auto_suggest: true
+    citation_format: "bluebook"
+
+  risk_management:
+    disclaimer_strength: "high"
+    ambiguity_threshold: 0.4
+
+tools:
+  enabled:
+    - "document_compare"
+    - "clause_library"
+    - "redline_tracker"
+    - "mcp_legal_plugin"
