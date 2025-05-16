@@ -1,0 +1,30 @@
+# 4-bit Quantization Profile
+quantization:
+  method: "gptq"  # alternatives: awq, bitsandbytes
+  bits: 4
+  group_size: 128
+  damp_percent: 0.1
+  desc_act: true  # descriptive activation
+
+gptq_specific:
+  dataset: "c4"
+  seed: 42
+  nsamples: 128
+  use_triton: true
+
+memory:
+  expected_reduction: 0.23
+  max_memory_usage: 6000  # MB
+
+performance:
+  latency_multiplier: 1.15
+  throughput_boost: 2.1
+
+compatibility:
+  requires: 
+    - "cuda>=11.7"
+    - "torch>=2.1.0"
+  supported_models:
+    - "llama-2"
+    - "mistral"
+    - "mixtral"
