@@ -1,0 +1,29 @@
+# DevOps Sector Agent Profile
+devops:
+  infrastructure:
+    supported_providers:
+      - "AWS"
+      - "Azure"
+      - "GCP"
+    iac_preference: "terraform"  # or pulumi/cloudformation
+
+  monitoring:
+    alert_thresholds:
+      cpu: 80
+      memory: 85
+      disk: 90
+    log_retention_days: 30
+
+  security:
+    cis_benchmark_enforcement: true
+    secret_scanning: true
+
+  deployment:
+    canary_percentage: 10
+    rollback_window: 30  # minutes
+
+tools:
+  enabled:
+    - "k8s_troubleshooter"
+    - "cloud_cost_optimizer"
+    - "incident_response_playbook"
