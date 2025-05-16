@@ -1,0 +1,27 @@
+# 8-bit Quantization Profile
+quantization:
+  method: "bitsandbytes"  # alternatives: gptq, awq
+  bits: 8
+  fp16_weights: true
+  threshold: 6.0
+
+bnb_specific:
+  has_fp16_weights: true
+  memory_efficient: true
+  threshold: 6.0
+  skip_modules: null
+
+memory:
+  expected_reduction: 0.5
+  max_memory_usage: 10000  # MB
+
+performance:
+  latency_multiplier: 1.05
+  throughput_boost: 1.4
+
+compatibility:
+  requires:
+    - "cuda>=11.0"
+    - "torch>=1.13.0"
+  supported_models:
+    - "all"  # Broad compatibility
