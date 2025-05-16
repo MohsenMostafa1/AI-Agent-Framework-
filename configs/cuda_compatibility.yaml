@@ -1,0 +1,29 @@
+# CUDA/GPU Compatibility Matrix
+cuda:
+  supported_versions:
+    - "12.1"
+    - "11.8"
+    - "11.7"
+  
+gpu_arch:
+  minimum_compute: 7.0  # Volta
+  recommended: 8.6      # Ampere
+
+framework_support:
+  pytorch:
+    min_version: "2.0.0"
+    cuda_builds:
+      - "cu117"
+      - "cu118"
+  
+  tensorrt:
+    min_version: "8.6.0"
+    supported_precisions:
+      - FP16
+      - INT8
+      - FP32
+
+fallback_modes:
+  cpu_fallback: true
+  mixed_precision: true
+  memory_threshold: 0.8  # GPU util threshold before offloading
